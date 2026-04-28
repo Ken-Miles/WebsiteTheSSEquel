@@ -92,7 +92,11 @@ export default function BecomeSponsorForm() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} size="lg">
+      <Button
+        onClick={() => setOpen(true)}
+        size="lg"
+        className="w-full sm:w-auto max-w-full max-[300px]:px-3 max-[300px]:text-sm"
+      >
         <Handshake className="h-5 w-5 mr-2" />
         Become a Sponsor
       </Button>
@@ -111,7 +115,8 @@ export default function BecomeSponsorForm() {
               Inquiry Submitted!
             </h3>
             <p className="text-muted-foreground">
-              Thank you for your interest in sponsoring SSE. Our team will reach out to you soon.
+              Thank you for your interest in sponsoring SSE. Our team will reach
+              out to you soon.
             </p>
           </div>
         ) : (
@@ -164,14 +169,23 @@ export default function BecomeSponsorForm() {
 
               <div className="space-y-2">
                 <Label htmlFor="sponsor-tier">Interested Tier *</Label>
-                <Select value={interestedTier} onValueChange={setInterestedTier}>
+                <Select
+                  value={interestedTier}
+                  onValueChange={setInterestedTier}
+                >
                   <SelectTrigger id="sponsor-tier">
                     <SelectValue placeholder="Select a sponsorship tier" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="tier1">Tier 1 — Visibility ($1,000)</SelectItem>
-                    <SelectItem value="tier2">Tier 2 — Engagement ($3,000)</SelectItem>
-                    <SelectItem value="tier3">Tier 3 — Premium Access ($5,000)</SelectItem>
+                    <SelectItem value="tier1">
+                      Tier 1 — Visibility ($1,000)
+                    </SelectItem>
+                    <SelectItem value="tier2">
+                      Tier 2 — Engagement ($3,000)
+                    </SelectItem>
+                    <SelectItem value="tier3">
+                      Tier 3 — Premium Access ($5,000)
+                    </SelectItem>
                     <SelectItem value="custom">Custom Package</SelectItem>
                   </SelectContent>
                 </Select>
@@ -192,7 +206,11 @@ export default function BecomeSponsorForm() {
             {error && <p className="text-destructive text-sm mt-2">{error}</p>}
 
             <ModalFooter>
-              <Button variant="neutral" onClick={handleCancel} disabled={isSubmitting}>
+              <Button
+                variant="neutral"
+                onClick={handleCancel}
+                disabled={isSubmitting}
+              >
                 Cancel
               </Button>
               <Button onClick={handleSubmit} disabled={isSubmitting}>

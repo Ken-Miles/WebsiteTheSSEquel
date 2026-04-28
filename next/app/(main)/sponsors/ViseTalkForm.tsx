@@ -109,7 +109,12 @@ export default function ViseTalkForm() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} variant="neutral" size="lg">
+      <Button
+        onClick={() => setOpen(true)}
+        variant="neutral"
+        size="lg"
+        className="w-full sm:w-auto max-w-full max-[300px]:px-3 max-[300px]:text-sm"
+      >
         <Mic className="h-5 w-5 mr-2" />
         Speak at ViSE
       </Button>
@@ -128,8 +133,8 @@ export default function ViseTalkForm() {
               Proposal Submitted!
             </h3>
             <p className="text-muted-foreground">
-              Thank you for proposing a talk! Our team will review and reach
-              out to coordinate scheduling.
+              Thank you for proposing a talk! Our team will review and reach out
+              to coordinate scheduling.
             </p>
           </div>
         ) : (
@@ -225,7 +230,9 @@ export default function ViseTalkForm() {
                     <SelectValue placeholder="Select a format" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="in_person">In-person (GOL-1670)</SelectItem>
+                    <SelectItem value="in_person">
+                      In-person (GOL-1670)
+                    </SelectItem>
                     <SelectItem value="virtual">Virtual</SelectItem>
                     <SelectItem value="hybrid">Hybrid</SelectItem>
                   </SelectContent>
